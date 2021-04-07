@@ -3,6 +3,7 @@ import json
 import logging
 import requests
 
+
 class Session(object):
     '''Attach session authentication information to requests.'''
 
@@ -64,8 +65,9 @@ class Session(object):
             sort_keys=True
         )
 
-    def query(self, type, params=None):#or change it direcly to get
-        url = self._server_url + type
+    def query(self, url, params=None, decode=True):#or change it direcly to get
+        url = self._server_url + url
+        print("url --> {}".format(url))
         #params = self.encode(params)
 
         response = self._request.get(
@@ -74,15 +76,17 @@ class Session(object):
             timeout=self.request_timeout
         )
 
-        try:
-            result = self.decode(response.text)
-        except Exception as e:
-            error_message = (
-                'Server reported error in unexpected format. '
-                'Raw error was: {0}. \n Exception: {1}'.format(response.text, e)
-            )
-            self.logger.exception(error_message)
-            raise Exception(error_message)
+        result = response.text
+        if decode:
+            try:
+                result = self.decode(result)
+            except Exception as e:
+                error_message = (
+                    'Server reported error in unexpected format. '
+                    'Raw error was: {0}. \n Exception: {1}'.format(response.text, e)
+                )
+                self.logger.exception(error_message)
+                raise Exception(error_message)
         return result
 
     def get(self, entity, filter):
@@ -99,23 +103,4 @@ class Session(object):
             'volatility':'volatility'
         }
 
-class Pricing(object):
 
-    @property
-    def url(self):
-        return self._url
-
-    @property
-    def base_url(self):
-        return self._base_url
-
-    def _init__(self):
-        self._base_url = "pricing/"
-        # self._url = "pricing/"
-
-    def prices_by_ticker(
-            self, quote_currency, ticker_symbol, from=None, to=None,
-            prices_at_asc=None, page_number=None, page_size=None, format=None
-    ):
-        #TODO: I should be using url join or path.join or something cooler
-        url = self.base_url + quote_currency+"/" + quote_currency+"/"
