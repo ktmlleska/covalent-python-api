@@ -4,3 +4,5 @@
 # All rights reserved.
 # Please see the LICENSE file that should have been included as part of this
 # package.
+
+from covalent_api.constants.maps import *
