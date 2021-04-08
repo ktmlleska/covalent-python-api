@@ -15,3 +15,12 @@ AVAILABLE_CHAIN_IDS = {
     'Fuji C-Chain Testnet': 43113,
     'Fantom Opera Mainnet': 250
 }
+
+#Available chains id contract metadata
+AVAILABLE_CHAIN_IDS_CONTRACT_METADATA = {
+    'Polygon/Matic Mainnet': 137,
+    'Binance Smart Chain': 56,
+    'Avalanche C-Chain Mainnet': 43114,
+    'Fuji C-Chain Testnet': 43113,
+    'Fantom Opera Mainnet': 250
+}

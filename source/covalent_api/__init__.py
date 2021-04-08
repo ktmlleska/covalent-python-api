@@ -6,4 +6,5 @@
 # package.
 
 from session import Session
-from pricing import Pricing
+from pricing import *
+from class_a import *

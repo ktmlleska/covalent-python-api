@@ -6,4 +6,4 @@
 # package.
 
 def generate_url(base_url, url_args):
-    return base_url + "/".join(url_args) + "?"
+    return base_url + "/".join(url_args) + "/?"
