@@ -53,10 +53,10 @@ class Pricing(object):
         :param format: If format=csv, return a flat CSV instead of JSON responses.
         :type format: string
         '''
-        if chain_id not in constants.AVAILABLE_CHAIN_IDS:
+        if chain_id not in list(constants.AVAILABLE_CHAIN_IDS.values()):
             raise Exception(
                 "chain_id should be one of {}".format(
-                    list(constants.AVAILABLE_CHAIN_IDS.values)
+                    list(constants.AVAILABLE_CHAIN_IDS.values())
                 )
             )
 
@@ -116,10 +116,10 @@ class Pricing(object):
         :param format: If format=csv, return a flat CSV instead of JSON responses.
         :type format: string
         '''
-        if chain_id not in constants.AVAILABLE_CHAIN_IDS:
+        if chain_id not in list(constants.AVAILABLE_CHAIN_IDS.values()):
             raise Exception(
                 "chain_id should be one of {}".format(
-                    list(constants.AVAILABLE_CHAIN_IDS.values)
+                    list(constants.AVAILABLE_CHAIN_IDS.values())
                 )
             )
 

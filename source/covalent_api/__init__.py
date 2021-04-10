@@ -8,3 +8,4 @@
 from session import Session
 from pricing import *
 from class_a import *
+from class_b import *

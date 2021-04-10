@@ -54,7 +54,7 @@ class ClassB(object):
             'swaps': swaps
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
 
@@ -89,7 +89,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_sushiswap_network_assets(self, chain_id):
@@ -117,7 +117,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_aave_v2_address_balances(self, address):
@@ -135,7 +135,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_aave_address_balances(self, address):
@@ -151,7 +151,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_balancer_exchange_address_balances(self, address):
@@ -167,7 +167,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_compound_address_activity(self, address):
@@ -183,7 +183,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_compound_address_balances(self, address):
@@ -199,7 +199,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_curve_address_balances(self, address):
@@ -215,7 +215,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_farming_stats(self, address):
@@ -231,7 +231,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_marker_address_balances_and_acts(self, address):
@@ -255,7 +255,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_uniswap_v1_address_exchange_balances(self, address):
@@ -273,7 +273,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_uniswap_v2_address_exchange_liquidity_transactions(
@@ -295,7 +295,7 @@ class ClassB(object):
             'swaps': swaps
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_uniswap_v2_address_exchange_balances(self, address):
@@ -312,7 +312,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_aave_v2_network_assets(self):
@@ -323,7 +323,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_aave_network_assets(self):
@@ -334,7 +334,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_augur_market_affiliate_fee_divisors(
@@ -354,7 +354,7 @@ class ClassB(object):
             'page-size':page_size
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_compound_network_assets(self):
@@ -365,7 +365,7 @@ class ClassB(object):
         params = {
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
 
     def get_uniswap_v2_network_assets(
@@ -389,5 +389,5 @@ class ClassB(object):
             'page-size':page_size
         }
 
-        result = self.session.query(method_url, params, decode=False)
+        result = self.session.query(method_url, params, decode=True)
         return result
