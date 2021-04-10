@@ -7,21 +7,15 @@
 
 
 from covalent_api import constants
-from covalent_api import url_utils
 
 
 class ClassB(object):
-
-    @property
-    def base_url(self):
-        return self._base_url
 
     @property
     def session(self):
         return self._session
 
     def __init__(self, session):
-        self._base_url = ''#"pricing/"
         self._session = session
 
     def get_sushiswap_address_exchange_liquidity_transactions(

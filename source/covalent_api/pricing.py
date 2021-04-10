@@ -7,24 +7,18 @@
 
 
 from covalent_api import constants
-from covalent_api import url_utils
 
 
 class Pricing(object):
-
-    @property
-    def base_url(self):
-        return self._base_url
 
     @property
     def session(self):
         return self._session
 
     def __init__(self, session):
-        self._base_url = "pricing/"
         self._session = session
 
-    def prices_by_address(
+    def get_prices_by_address(
             self, chain_id, quote_currency, contract_address, date_from=None,
             date_to=None, prices_at_asc=False, page_number=None, page_size=None,
             format="json"
@@ -36,10 +30,7 @@ class Pricing(object):
                 )
             )
 
-        method_url = "historical_by_address"
-        url_args = [method_url, chain_id, quote_currency, contract_address]
-
-        url = url_utils.generate_url(self.base_url, url_args)
+        method_url = '/v1/pricing/historical_by_address/{chain_id}/{quote_currency}/{contract_address}/'.format(chain_id=chain_id, quote_currency=quote_currency,contract_address=contract_address)
         params = {
             'from': date_from,
             'to': date_to,
@@ -49,11 +40,10 @@ class Pricing(object):
             'format': format
         }
         decode = format == 'json'
-
-        result = self.session.query(url, params, decode=decode)
+        result = self.session.query(method_url, params, decode=decode)
         return result
 
-    def prices_by_addresses(
+    def get_prices_by_addresses(
             self, chain_id, quote_currency, contract_address, date_from=None,
             date_to=None, prices_at_asc=False, page_number=None, page_size=None,
             format="json"
@@ -65,9 +55,7 @@ class Pricing(object):
                 )
             )
 
-        method_url = "historical_by_address"
-        url_args = [method_url, chain_id, quote_currency, contract_address]
-        url = url_utils.generate_url(self.base_url, url_args)
+        method_url = '/v1/pricing/historical_by_addresses/{chain_id}/{quote_currency}/{contract_addresses}/'.format(chain_id=chain_id, quote_currency=quote_currency, contract_addresses=contract_addresses)
         params = {
             'from': date_from,
             'to': date_to,
@@ -77,16 +65,15 @@ class Pricing(object):
             'format': format
         }
         decode = format == 'json'
-        result = self.session.query(url, params, decode=decode)
+        result = self.session.query(method_url, params, decode=decode)
         return result
 
-    def prices_by_ticker(
+    def get_historical_prices_by_ticker_symbol(
             self, quote_currency, ticker_symbol, date_from=None, date_to=None,
             prices_at_asc=False, page_number=None, page_size=None, format="json"
     ):
-        method_url = "historical"
-        url_args = [method_url, quote_currency, ticker_symbol]
-        url = url_utils.generate_url(self.base_url, url_args)
+
+        method_url = '/v1/pricing/historical/{quote_currency}/{ticker_symbol}/'.format(quote_currency=quote_currency, ticker_symbol=ticker_symbol)
         params = {
             'from': date_from,
             'to': date_to,
@@ -96,14 +83,13 @@ class Pricing(object):
             'format': format
         }
         decode = format == 'json'
-        result = self.session.query(url, params, decode=decode)
+        result = self.session.query(method_url, params, decode=decode)
         return result
 
-    def spot_prices(
+    def get_spot_prices(
             self, tickers=None, page_number=None, page_size=None, format="json"
     ):
-        method_url = "tickers"
-        url = url_utils.generate_url(self.base_url, [method_url])
+        method_url = '/v1/pricing/tickers/'
         params = {
             'tickers': tickers,
             'page-number': page_number,
@@ -111,14 +97,13 @@ class Pricing(object):
             'format': format
         }
         decode = format == 'json'
-        result = self.session.query(url, params, decode=decode)
+        result = self.session.query(method_url, params, decode=decode)
         return result
 
-    def price_volatility(
+    def get_price_volatility(
             self, tickers=None, page_number=None, page_size=None, format="json"
     ):
-        method_url = "volatility"
-        url = url_utils.generate_url(self.base_url, [method_url])
+        method_url = '/v1/pricing/volatility/'
         params = {
             'tickers': tickers,
             'page-number': page_number,
@@ -126,5 +111,5 @@ class Pricing(object):
             'format': format
         }
         decode = format == 'json'
-        result = self.session.query(url, params, decode=decode)
+        result = self.session.query(method_url, params, decode=decode)
         return result
