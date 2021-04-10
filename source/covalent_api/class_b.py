@@ -292,7 +292,7 @@ class ClassB(object):
             address=address
         )
         params = {
-            'swaps':swaps
+            'swaps': swaps
         }
 
         result = self.session.query(method_url, params, decode=False)

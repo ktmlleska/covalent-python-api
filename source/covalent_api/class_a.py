@@ -112,7 +112,7 @@ class ClassA(object):
         return result
 
     def get_transactions(
-            self, chain_id, address, block_signed_at_asc=None, no_logs=None,
+            self, chain_id, address, block_signed_at_asc=False, no_logs=False,
             page_number=None, page_size=None, format="json"
     ):
         '''
@@ -655,11 +655,10 @@ class ClassA(object):
         '''
         Returns a list of all contracts on a blockchain along with their metadata.
 
-        :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+        :param chain_id: Chain ID of the Blockchain being queried.
+        Supports 56 for BSC Mainnet and 137 for Polygon/Matic Mainnet,
+        43114 for Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet,
+        and 250 for Fantom Opera Mainnet.
         :type chain_id: string 
         :param id: Only all supported right now.
         :type id: string
@@ -700,7 +699,7 @@ class ClassA(object):
         return result
 
     def get_a_transaction(
-            self, chain_id, tx_hash, no_logs=None, page_number=None,
+            self, chain_id, tx_hash, no_logs=False, page_number=None,
             page_size=None, format="json"
     ):
         '''
