@@ -179,7 +179,7 @@ class ClassA(object):
         return result
 
     def get_erc20_token_transfers(
-            self, chain_id, address, contract_address=None,
+            self, chain_id, address, contract_address,
             page_number=None, page_size=None, format="json"
     ):
         '''

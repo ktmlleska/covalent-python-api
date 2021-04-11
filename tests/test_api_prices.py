@@ -6,11 +6,10 @@
 # package.
 
 
-from types import FunctionType
-import inspect
 import os
 import logging
 
+from covalent_api import url_utils as utils
 import covalent_api
 
 logging.basicConfig()
@@ -20,7 +19,7 @@ logger.setLevel(logging.INFO)
 
 
 args_dict = {
-    'chain_id': 1,
+    'chain_id': '1',
     'address': '0x74c1e4b8cae59269ec1d85d3d4f324396048f4ac',
     'block_height': '1',
     'starting_block': '1',
@@ -35,41 +34,34 @@ args_dict = {
     'ticker_symbol': 'ETH'
 }
 
-# Get all methods from class
-def methods(cls):
-    return [x for x, y in cls.__dict__.items() if type(y) == FunctionType and not x.startswith('_')]
-
 #Test class methods
 def test_class(cls, class_methods):
     log_errors = []
 
     for meth_name in class_methods:
         meth = getattr(cls, meth_name)
-        meth_info = inspect.getfullargspec(meth)
-        args = meth_info.args
-        args.remove('self')
+        required_args, optional_arguments = utils.get_method_arguments(meth)
         meth_args = {}
         for k, v in args_dict.items():
-            if k in args:
+            if k in required_args:
                 meth_args[k] = v
         if meth_name == 'get_all_contract_metadata':
-            meth_args['chain_id'] = 56
-
+            meth_args['chain_id'] = '56'
         try:
             result = meth(**meth_args)
         except Exception as e:
             raise Exception(
                 "Could not execute the method {}. \n Arguments: {} \n Error: {}".format(
-                    meth_name,meth_args, e
+                    meth_name, meth_args, e
                 )
             )
 
         if not result:
             log_errors.append({'method_name': meth_name, 'result': result})
-            print("meth: {}".format(meth_name))
-            print("result: {}".format(result))
-            print("Test Error")
-            print("******************************")
+            logger.debug("meth: {}".format(meth_name))
+            logger.debug("result: {}".format(result))
+            logger.debug("Test Error")
+            logger.debug("******************************")
             continue
         if isinstance(result, dict):
             if result.get('error'):
@@ -117,15 +109,15 @@ session = covalent_api.Session(
 
 #Test class a
 class_a = covalent_api.ClassA(session)
-class_a_methods = methods(covalent_api.ClassA)
+class_a_methods = utils.get_class_methods(covalent_api.ClassA)
 errors_a = test_class(class_a, class_a_methods)
 
 #Test class b
 class_b = covalent_api.ClassB(session)
-class_b_methods = methods(covalent_api.ClassB)
+class_b_methods = utils.get_class_methods(covalent_api.ClassB)
 errors_b = test_class(class_b, class_b_methods)
 
 #Test class pricing
 class_prices = covalent_api.Pricing(session)
-class_prices_methods = methods(covalent_api.Pricing)
+class_prices_methods = utils.get_class_methods(covalent_api.Pricing)
 errors_prices = test_class(class_prices, class_prices_methods)

@@ -121,9 +121,11 @@ class Session(object):
         '''
         url = "{}{}".format(self._server_url, url)
 
+
         self.logger.debug("Url: {}".format(url))
         #params = self.encode(params)
         params = self._check_params(params)
+
         self.logger.debug("Parameters: {}".format(params))
 
         response = self._request.get(
@@ -133,6 +135,8 @@ class Session(object):
         )
 
         result = response.text
+        if not result:
+            return result
         if decode:
             try:
                 result = self.decode(result)
