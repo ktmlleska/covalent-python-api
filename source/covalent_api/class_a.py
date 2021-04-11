@@ -584,8 +584,8 @@ class ClassA(object):
             )
         )
         params = {
-            'starting_block': starting_block,
-            'ending_block': ending_block,
+            'starting-block': starting_block,
+            'ending-block': ending_block,
             'page-number': page_number,
             'page-size': page_size,
             'format': format

@@ -26,7 +26,7 @@ args_dict = {
     'starting_block': '1',
     'ending_block': '3',
     'topic': '0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925',
-    'token_id': 'ERC20',
+    'token_id': '123',
     'id': 'all',
     'tx_hash': '0x77cff4d41d028c10f5fa1ecbc8c899ce537332e9833d4477bbde110e7bc5b5e6',
     'quote_currency': 'EUR',
