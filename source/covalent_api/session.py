@@ -31,7 +31,7 @@ class Session(object):
         Initialize Session with the given *server_url* and *api_key*
 
         :param server_url: Default covalent api url: https://api.covalenthq.com
-        If None, will check for envar:: COVALENT_SERVER environment variable.
+            If None, will check for envar:: COVALENT_SERVER environment variable.
         :type server_url: string
         :param api_key: Personal covalent API key. If None check for
         envar:: COVALENT_API_KEY environment variable.
@@ -114,7 +114,7 @@ class Session(object):
         :param params: Dictionary with url parameters
         :type params: dictionary
         :param decode: Json decode the returned response from the server.
-        True by default.
+            True by default.
         :type decode: boolean
         '''
         url = "{}{}".format(self._server_url, url)

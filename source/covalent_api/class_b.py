@@ -22,15 +22,15 @@ class ClassB(object):
         Get Sushiswap address exchange liquidity transactions.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically.
         :type address: string
         :param swaps: Get additional insight on swap event data related to this
-        address, default: false
+            address, default: false
         :type swaps: string
         '''
 
@@ -61,10 +61,10 @@ class ClassB(object):
         automatically.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically.
         :type address: string
@@ -94,10 +94,10 @@ class ClassB(object):
         Return a paginated list of Sushiswap pools sorted by exchange volume.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string
         '''
 
@@ -282,7 +282,7 @@ class ClassB(object):
         :param address: Passing in an ENS resolves automatically.
         :type address: string
         :param swaps: Get additional insight on swap event data related to this
-        address, default: false
+            address, default: false
         :type swaps: string
         '''
         method_url = '/v1/1/address/{address}/stacks/uniswap_v2/acts/'.format(
@@ -372,7 +372,7 @@ class ClassB(object):
         Return a paginated list of Uniswap pools sorted by exchange volume.
 
         :param tickers: If tickers (a comma separated list) is present, only
-        return the pools that contain these tickers.
+            return the pools that contain these tickers.
         :type tickers: string
         :param page_number: The specific page to be returned.
         :type page_number: int32

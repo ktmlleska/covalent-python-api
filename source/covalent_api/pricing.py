@@ -27,10 +27,10 @@ class Pricing(object):
         if they are omitted, it returns today's price.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet. 
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param quote_currency: The requested fiat currency.
         :type quote_currency: string
@@ -41,8 +41,8 @@ class Pricing(object):
         :param date_to: The end day of the historical price range. (YYYY-MM-DD)
         :type date_to: string
         :param prices_at_asc: Sort the prices in chronological ascending order.
-        By default, it's set to false and returns prices in chronological
-        descending order.
+            By default, it's set to false and returns prices in chronological
+            descending order.
         :type prices_at_asc: string
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -90,10 +90,10 @@ class Pricing(object):
         it returns today's price.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param quote_currency: The requested fiat currency.
         :type quote_currency: string
@@ -104,8 +104,8 @@ class Pricing(object):
         :param date_to: The end day of the historical price range. (YYYY-MM-DD)
         :type date_to: string
         :param prices_at_asc: Sort the prices in chronological ascending order.
-        By default, it's set to false and returns prices in chronological
-        descending order.
+            By default, it's set to false and returns prices in chronological
+            descending order.
         :type prices_at_asc: string
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -159,8 +159,8 @@ class Pricing(object):
         :param date_to: The end day of the historical price range. (YYYY-MM-DD)
         :type date_to: string
         :param prices_at_asc: Sort the prices in chronological ascending order.
-        By default, it's set to false and returns prices in chronological
-        descending order.
+            By default, it's set to false and returns prices in chronological
+            descending order.
         :type prices_at_asc: string
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -196,7 +196,7 @@ class Pricing(object):
         sorted by market cap.
 
         :param tickers: If tickers (a comma separated list of tickers is present),
-        only return the spot prices for these tokens.
+            only return the spot prices for these tokens.
         :type tickers: string
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -224,7 +224,7 @@ class Pricing(object):
         Without the tickers query param, it defaults to ETH volatility.
 
         :param tickers: If tickers (a comma separated list of tickers is present),
-        only return the spot prices for these tokens.
+            only return the spot prices for these tokens.
         :type tickers: string
         :param page_number: The specific page to be returned.
         :type page_number: int32

@@ -24,19 +24,19 @@ class ClassA(object):
         current spot prices.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string
         :param address: Passing in an ENS resolves automatically.
         :type address: string
         :param nft: Set to true to return ERC721 and ERC1155 assets. Defaults to
-        false.
+            false.
         :type nft: boolean
         :param no_nft_fetch: Set to true to skip fetching NFT metadata, which
-        can result in faster responses. Defaults to false and only applies when
-        nft=true.
+            can result in faster responses. Defaults to false and only applies when
+            nft=true.
         :type no_nft_fetch: boolean
         :param format: If format=csv, return a flat CSV instead of JSON responses.
         :type format: string
@@ -75,10 +75,10 @@ class ClassA(object):
         days at 24 hour timestamps.
         
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string
         :param address: Passing in an ENS resolves automatically.
         :type address: string
@@ -127,19 +127,19 @@ class ClassA(object):
 
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
         :param block_signed_at_asc: Sort the transactions in chronological
-        ascending order. By default, it's set to false and returns transactions
-        in chronological descending order.
+            ascending order. By default, it's set to false and returns transactions
+            in chronological descending order.
         :type block_signed_at_asc: bool
         :param no_logs: Setting this to true will omit decoded event logs, 
-        resulting in lighter and faster responses. By default it's set to false.
+            resulting in lighter and faster responses. By default it's set to false.
         :type no_logs: boolean
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -184,10 +184,10 @@ class ClassA(object):
         Get ERC20 token transfers. Passing in an ENS resolves automatically.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
@@ -198,9 +198,7 @@ class ClassA(object):
         :param page_size: The number of results per page.
         :type page_size: int32
         :param format: If format=csv, return a flat CSV instead of JSON responses. 
-        :type format: string 
-         
-         
+        :type format: string
         '''
 
         if chain_id not in list(constants.AVAILABLE_CHAIN_IDS.values()):
@@ -230,22 +228,21 @@ class ClassA(object):
     def get_a_block(
             self, chain_id, block_height, format="json"
     ):
+
         '''
         Retrieve a single block at block_height. If block_height is set to the
         value latest, return the latest block available.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
-        :type chain_id: string 
-        :param block_height: 
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
+        :type chain_id: string
+        :param block_height:
         :type block_height: string
-        :param format: If format=csv, return a flat CSV instead of JSON responses. 
-        :type format: string 
-         
-         
+        :param format: If format=csv, return a flat CSV instead of JSON responses.
+        :type format: string
         '''
         
         if chain_id not in list(constants.AVAILABLE_CHAIN_IDS.values()):
@@ -282,17 +279,17 @@ class ClassA(object):
         and so on: https://gist.github.com/gane5h/a117f507879e6a70bef1cc4240f3264d
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
         :param starting_block: Starting block to define a block range.
         :type starting_block: string
         :param ending_block: Ending block to define a block range. Passing in
-        'latest' uses the latest block height.
+            'latest' uses the latest block height.
         :type ending_block: string
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -340,17 +337,17 @@ class ClassA(object):
         https://www.covalenthq.com/docs/tools/topic-calculator
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param topic: 
         :type topic: string
         :param starting_block: Starting block to define a block range.
         :type starting_block: string
         :param ending_block: Ending block to define a block range. Passing in
-        'latest' uses the latest block height.
+            'latest' uses the latest block height.
         :type ending_block: string
         :param sender_address: The address of the sender.
         :type sender_address: string
@@ -400,10 +397,10 @@ class ClassA(object):
         Example: https://gist.github.com/gane5h/e0e5f9ae2517d353324465d9cbe64ae9
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
@@ -443,10 +440,10 @@ class ClassA(object):
         Returns a list of all token IDs for a NFT contract on a blockchain network.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
@@ -490,10 +487,10 @@ class ClassA(object):
         blockchain network.
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
@@ -548,17 +545,17 @@ class ClassA(object):
         https://gist.github.com/gane5h/23e2efcdeefb661fa2907fbbe2c81d5c
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
         :param starting_block: Starting block to define a block range.
         :type starting_block: string
         :param ending_block: Ending block to define a block range. Passing in
-        'latest' uses the latest block height.
+            'latest' uses the latest block height.
         :type ending_block: string
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -606,10 +603,10 @@ class ClassA(object):
         https://gist.github.com/gane5h/0c7c088c28def63e60cf7bd3957ce9a5
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param address: Passing in an ENS resolves automatically. 
         :type address: string 
@@ -654,9 +651,9 @@ class ClassA(object):
         Returns a list of all contracts on a blockchain along with their metadata.
 
         :param chain_id: Chain ID of the Blockchain being queried.
-        Supports 56 for BSC Mainnet and 137 for Polygon/Matic Mainnet,
-        43114 for Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet,
-        and 250 for Fantom Opera Mainnet.
+            Supports 56 for BSC Mainnet and 137 for Polygon/Matic Mainnet,
+            43114 for Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet,
+            and 250 for Fantom Opera Mainnet.
         :type chain_id: string 
         :param id: Only all supported right now.
         :type id: string
@@ -701,21 +698,22 @@ class ClassA(object):
             page_size=None, format="json"
     ):
         '''
+
         Retrieve a single transaction for tx_hash including their decoded log events.
 
         Here's an example response with fully decoded event logs:
         https://gist.github.com/gane5h/887ab9f81a364b804112cf1dee3cf7fc
 
         :param chain_id: Chain ID of the Blockchain being queried. Currently
-        supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
-        for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
-        Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
-        Fantom Opera Mainnet.
+            supports 1 for Ethereum Mainnet, 137 for Polygon/Matic Mainnet, 80001
+            for Polygon/Matic Mumbai Testnet, 56 for Binance Smart Chain, 43114 for
+            Avalanche C-Chain Mainnet, 43113 for Fuji C-Chain Testnet, and 250 for
+            Fantom Opera Mainnet.
         :type chain_id: string 
         :param tx_hash: 
         :type tx_hash: string
         :param no_logs: Setting this to true will omit decoded event logs,
-        resulting in lighter and faster responses. By default it's set to false.
+            resulting in lighter and faster responses. By default it's set to false.
         :type no_logs: boolean
         :param page_number: The specific page to be returned.
         :type page_number: int32
@@ -723,6 +721,7 @@ class ClassA(object):
         :type page_size: int32
         :param format: If format=csv, return a flat CSV instead of JSON responses. 
         :type format: string
+
         '''
         if chain_id not in list(constants.AVAILABLE_CHAIN_IDS.values()):
             raise Exception(
