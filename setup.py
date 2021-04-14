@@ -11,7 +11,6 @@ from pkg_resources import get_distribution, DistributionNotFound
 
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
-RESOURCE_PATH = os.path.join(ROOT_PATH, 'resource')
 SOURCE_PATH = os.path.join(ROOT_PATH, 'source')
 README_PATH = os.path.join(ROOT_PATH, 'README.md')
 
