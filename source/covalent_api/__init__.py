@@ -3,7 +3,7 @@
 # Please see the LICENSE file that should have been included as part of this
 # package.
 
-from session import Session
-from pricing import *
-from class_a import *
-from class_b import *
+from covalent_api.session import Session
+from covalent_api.pricing import *
+from covalent_api.class_a import *
+from covalent_api.class_b import *

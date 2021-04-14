@@ -51,11 +51,12 @@ setup(
     package_dir={
         '': 'source'
     },
-    # use_scm_version={
-    #     'write_to': 'source/covalent_api/_version.py',
-    #     'write_to_template': version_template,
-    # },
+    use_scm_version={
+        'write_to': 'source/covalent_api/_version.py',
+        'write_to_template': version_template,
+    },
     setup_requires=[
+        'docutils < 0.17',
         'sphinx >= 1.2.2, < 1.6',
         'sphinx_rtd_theme >= 0.1.6, < 1',
         'lowdown >= 0.1.0, < 2',
