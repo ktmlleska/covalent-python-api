@@ -10,8 +10,8 @@ Welcome to Covalent Python API's documentation!
    :maxdepth: 1
    :caption: Contents:
 
-   source/modules
    readme
+   source/modules
 
 
 

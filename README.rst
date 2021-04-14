@@ -1,6 +1,11 @@
 
-Covalent Python API
+
+Build and Install
 ===================
+
+********************
+Covalent Python API
+********************
 
 
 Covalent Python Api is a package that allows python developers to query all the 
@@ -10,39 +15,39 @@ modules from the Covalent API directly with python.
 Installation
 ***************
 
-Installing from pip:
------------------
+Installing from pip::
+
     
     $ pip install covalent-python-api
 
 
-### Or build from source:
+Or build from source:
 
-- Clone the public repository:
+- Clone the public repository::
 
         $ git clone git@bitbucket.org:lluisBrokenC/covalent_python_api.git
 
 - Or download and extract the
   `zipball <https://bitbucket.org/lluisBrokenC/covalent_python_api/get/master.zip>`_
 
-#### Now you can now build or install the package:
+You can now build or install the package:
 
-- Build:
-  
+- Build::
+
         $ python setup.py build
-- Install:
-  
+- Install::
+
         $ python setup.py install
 
 ****************
-## Documentation
+Documentation
 ****************
 
-### Build Documentation:
+Build Documentation::
 
     $ python setup.py build_sphinx
 
-#### View documentation on browser:
+View documentation on browser::
 
         $ file:///path/to/covalent-python-api/build/doc/html/index.html
 
@@ -50,7 +55,7 @@ Also is recommended to check the official Covalent API documentation in:
 https://www.covalenthq.com/docs/api/
 
 ************************
-## Copyright and license
+Copyright and license
 ************************
 
 Copyright (c) 2021 Lluis Casals Marsol
