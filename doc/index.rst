@@ -11,6 +11,7 @@ Welcome to Covalent Python API's documentation!
    :caption: Contents:
 
    source/modules
+   readme
 
 
 

@@ -12,7 +12,7 @@ from pkg_resources import get_distribution, DistributionNotFound
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 SOURCE_PATH = os.path.join(ROOT_PATH, 'source')
-README_PATH = os.path.join(ROOT_PATH, 'README.md')
+README_PATH = os.path.join(ROOT_PATH, 'README.rst')
 
 try:
     release = get_distribution('covalent-python-api').version
