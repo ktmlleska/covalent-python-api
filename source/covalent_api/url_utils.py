@@ -1,18 +1,18 @@
 # :coding: utf-8
 # :copyright: Copyright (c) 2021 Lluis Casals Marsol
-# Copyright 2021 Lluis Casals Marsol.
-# All rights reserved.
 # Please see the LICENSE file that should have been included as part of this
 # package.
 
 from types import FunctionType
 import inspect
 
+
 def get_class_methods(cls):
     return [
         x for x, y in cls.__dict__.items()
         if type(y) == FunctionType and not x.startswith('_')
     ]
+
 
 def get_method_arguments(method):
 
@@ -25,9 +25,3 @@ def get_method_arguments(method):
             else:
                 optional_args.append(param_name)
     return required_args, optional_args
-    #
-    #
-    # meth_info = inspect.getfullargspec(method)
-    # args = meth_info.args
-    # args.remove('self')
-    # return args
