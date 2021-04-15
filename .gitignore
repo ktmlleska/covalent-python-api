@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# SCM VERSION
+source/covalent_api/_version.py
+

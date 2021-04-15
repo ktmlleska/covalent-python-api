@@ -44,8 +44,7 @@ setup(
     keywords='covalent, python, api',
     packages=find_packages(SOURCE_PATH),
     project_urls={
-        "Documentation": "https://www.covalenthq.com/docs/api/",
-        "Source": "https://bitbucket.org/lluisBrokenC/covalent_python_api/src/{}".format(VERSION),
+        "Documentation": "https://www.covalenthq.com/docs/api/"
     },
     package_dir={
         '': 'source'
