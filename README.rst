@@ -43,11 +43,14 @@ You can now build or install the package:
 Documentation
 ****************
 
-Build Documentation::
+Check Covalent Python API Documentation on:
+https://covalent-python-api.readthedocs.io/en/latest/
+
+- Build Documentation::
 
     $ python setup.py build_sphinx
 
-View documentation on browser::
+- View documentation on browser::
 
         $ file:///path/to/covalent-python-api/build/doc/html/index.html
 
