@@ -3,9 +3,20 @@
 # Please see the LICENSE file that should have been included as part of this
 # package.
 
+from functools import partial
 
 from covalent_api import constants
 
+
+def max_pages_exceeded(pages, max_pages):
+    if max_pages is None:
+        return False
+    #need >= rather than > to avoid "off by one" errors
+    #i.e. The first page that covalent returns is page zero
+    return pages>=max_pages
+
+def get_num_results(result):
+    return len(result['data']['items'])
 
 class ClassA(object):
 
@@ -15,6 +26,45 @@ class ClassA(object):
 
     def __init__(self, session):
         self._session = session
+
+    def paginate(self, func, *args, page_size=10000, starting_page=0, max_pages=10000, **kwargs):
+        '''
+        Handle pagination of large queries.
+        Usage example: 
+        ```
+        for result in classa_instance.paginate(classa_instance.get_transactions, chain_id=RSK_CHAIN_ID, address=address,
+                page_size=10, starting_page=1, max_pages=3):
+            print(result)
+        ```
+
+        :param func Function you are going to call
+        :param args Non-keyword arguments to pass to the function on each call
+        :param page_size The number of results on each page
+        :param starting_page Number of the page to start the iteration on.  e.g. 0
+        :param max_pages Maximum number of pages to iterate over.  Set to "None" for an unlimited number of pages
+        :param kwargs Other keyword arguments will be passed to the function
+        '''
+        partial_func = partial(func, *args, **kwargs)
+        num_results = None
+        keep_going = True
+        pages_retrieved = 0
+        page_number = starting_page
+
+        while keep_going and not max_pages_exceeded(pages_retrieved, max_pages):
+            result = partial_func(page_number=page_number, page_size=page_size)
+            pages_retrieved += 1
+            if result['error']:
+                keep_going = False
+                return result
+            else:
+                num_results = get_num_results(result)
+
+            if num_results == 0:
+                keep_going = False
+            else: #deal with results
+                page_number += 1
+                yield result
+
 
     def get_token_balances_for_address(
             self, chain_id, address, nft=False, no_nft_fetch=False, format="json"
