@@ -6,6 +6,7 @@
 import os
 import json
 import logging
+from functools import partial
 import requests
 
 
@@ -25,6 +26,7 @@ class Session(object):
     def __init__(
             self, server_url='https://api.covalenthq.com',
             api_key=None,
+            api_key_is_username=False,
             timeout=60
     ):
         '''
@@ -37,6 +39,9 @@ class Session(object):
         envar:: COVALENT_API_KEY environment variable.
         :type api_key: string
         :param timeout: Timeout in case the server is not responding.
+        :type api_key_is_username: bool
+        :param api_key_is_username: If True, the string in api_key is the username of the request auth, rather than the password
+                                    This is how covalent does Basic Auth per https://www.covalenthq.com/docs/api/#overview--supported-networks
         :type timeout: float
         '''
         super(Session, self).__init__()
@@ -72,7 +77,10 @@ class Session(object):
         self._api_key = api_key
 
         self._request = requests.Session()
-        self._request.auth = ('', self._api_key)
+        if not api_key_is_username:
+            self._request.auth = ('', self._api_key)
+        else:
+            self._request.auth = (self._api_key, '')
 
         self.request_timeout = timeout
 
