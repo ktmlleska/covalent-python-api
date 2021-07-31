@@ -11,7 +11,8 @@ AVAILABLE_CHAIN_IDS = {
     'Binance Smart Chain': '56',
     'Avalanche C-Chain Mainnet': '43114',
     'Fuji C-Chain Testnet': '43113',
-    'Fantom Opera Mainnet': '250'
+    'Fantom Opera Mainnet': '250',
+    'RSK Mainnet': '30'
 }
 
 #Available chains id contract metadata
