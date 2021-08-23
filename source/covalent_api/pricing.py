@@ -78,7 +78,7 @@ class Pricing(object):
         result = self.session.query(method_url, params, decode=decode)
         return result
 
-    def get_prices_by_addresses(
+    def get_historical_prices_by_addresses(
             self, chain_id, quote_currency, contract_addresses, date_from=None,
             date_to=None, prices_at_asc=False, page_number=None, page_size=None,
             format="json"
@@ -98,7 +98,7 @@ class Pricing(object):
         :param quote_currency: The requested fiat currency.
         :type quote_currency: string
         :param contract_addresses: Smart contract address(es).
-        :type contract_addresses: string
+        :type contract_addresses: list
         :param date_from: The start day of the historical price range. (YYYY-MM-DD)
         :type date_from: string
         :param date_to: The end day of the historical price range. (YYYY-MM-DD)
@@ -122,11 +122,11 @@ class Pricing(object):
             )
 
         method_url = (
-            '/v1/pricing/historical_by_addresses/{chain_id}/{quote_currency}/'
+            '/v1/pricing/historical_by_addresses_v2/{chain_id}/{quote_currency}/'
             '{contract_addresses}/'.format(
                 chain_id=chain_id,
                 quote_currency=quote_currency,
-                contract_addresses=contract_addresses
+                contract_addresses=','.join(contract_addresses)
             )
         )
         params = {

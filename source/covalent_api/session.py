@@ -26,7 +26,7 @@ class Session(object):
     def __init__(
             self, server_url='https://api.covalenthq.com',
             api_key=None,
-            api_key_is_username=False,
+            api_key_is_username=True,
             timeout=60
     ):
         '''
