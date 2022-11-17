@@ -125,7 +125,7 @@ class Session(object):
             True by default.
         :type decode: boolean
         '''
-        url = "{}{}".format(self._server_url, url)
+        url = "{}{}?&key={}".format(self._server_url, url, self.api_key)
 
 
         self.logger.debug("Url: {}".format(url))
